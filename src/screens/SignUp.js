@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Navbar from '../components/Navbar';
 
 export default function Signup() {
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     const [credentials, setcredentials] = useState({
         name: "",
         email: "",
@@ -37,10 +38,13 @@ export default function Signup() {
     };
 
     return (
-        <>
+        <div style={{ backgroundImage: 'url("https://images.pexels.com/photos/1565982/pexels-photo-1565982.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")', backgroundSize: 'cover', height: '100vh' }}>
+            <div>
+                <Navbar />
+            </div>
             <div className="container">
-                <form onSubmit={handleSubmit}>
-                    <div className="mb-3">
+                <form className='w-50 m-auto mt-5 border bg-dark border-success rounded' onSubmit={handleSubmit}>
+                    <div className="m-3">
                         <label htmlFor="name" className="form-label">
                             Name
                         </label>
@@ -52,7 +56,7 @@ export default function Signup() {
                             onChange={onChange}
                         />
                     </div>
-                    <div className="mb-3">
+                    <div className="m-3">
                         <label htmlFor="exampleInputEmail1" className="form-label">
                             Email address
                         </label>
@@ -69,7 +73,7 @@ export default function Signup() {
                             We'll never share your email with anyone else.
                         </div>
                     </div>
-                    <div className="mb-3">
+                    <div className="m-3">
                         <label htmlFor="exampleInputPassword1" className="form-label">
                             Password
                         </label>
@@ -82,7 +86,7 @@ export default function Signup() {
                             id="exampleInputPassword1"
                         />
                     </div>
-                    <div className="mb-3">
+                    <div className="m-3">
                         <label htmlFor="exampleInputPassword1" className="form-label">
                             Address
                         </label>
@@ -104,6 +108,6 @@ export default function Signup() {
                     </Link>
                 </form>
             </div>
-        </>
+        </div>
     );
 }

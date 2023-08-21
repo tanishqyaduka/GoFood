@@ -36,7 +36,7 @@ export default function Home() {
                 <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div className="carousel-inner" id='carousel'>
                         <div className='carousel-caption' style={{ "zIndex": "9" }}>
-                            <form className="d-flex">
+                            <form className="d-flex justify-content-center">
                                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={search} onChange={(e) => { setSearch(e.target.value) }} />
                                 {/* <button className="btn btn-outline-success text-white bg-success" type="submit">Search</button> */}
                             </form>
@@ -65,11 +65,11 @@ export default function Home() {
                 {foodCat !== []
                     ? foodCat.map((data) => {
                         return (
-                            <div className="row mb-3 g-1">
+                            <div className="row mb-3">
                                 <div key={data.id} className="fs-3 m-3">
                                     {data.CategoryName}
                                 </div>
-                                <hr />
+                                <hr id="hr-success" style={{ height: "4px", backgroundImage: "-webkit-linear-gradient(left,rgb(0, 255, 137),rgb(0, 0, 0))" }} />
                                 {foodItem !== [] ? (
                                     foodItem
                                         .filter(
@@ -81,7 +81,7 @@ export default function Home() {
                                             return (
                                                 <div
                                                     key={filterItems.id}
-                                                    className="col-12 col-md-5 col-lg-3"
+                                                    className="col-12 col-md-6 col-lg-3"
                                                 >
                                                     <Card
                                                         foodItem={filterItems}
